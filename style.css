@@ -25,3 +25,257 @@ footer .logo-brand img{width:135px;height:52px}
 .gallery-card:hover img{transform:scale(1.04)}
 .gallery-card span{position:absolute;bottom:18px;left:20px;color:#fff;font-size:13px;font-weight:600;letter-spacing:.04em;text-shadow:0 2px 10px #000}
 @media(max-width:800px){.project-gallery{grid-template-columns:1fr}.gallery-card{height:260px}}
+/* ===== ORNET BLACK & GOLD LUXURY THEME ===== */
+
+:root {
+  --ornet-black: #111110;
+  --ornet-dark: #191816;
+  --ornet-card: #201f1c;
+  --ornet-gold: #c9a45c;
+  --ornet-gold-light: #e5cb8c;
+  --ornet-text: #f6f1e7;
+  --ornet-muted: #c0b9ac;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ornet-black);
+}
+
+body {
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #c9a45c0b 0%,
+      transparent 40%
+    ),
+    var(--ornet-black) !important;
+  color: var(--ornet-text) !important;
+}
+
+/* Subtle gold accents throughout the website */
+section {
+  position: relative;
+  border-color: #c9a45c24;
+}
+
+.eyebrow {
+  color: var(--ornet-gold) !important;
+}
+
+h1, h2, h3 {
+  color: var(--ornet-text);
+}
+
+.hero h1 em,
+.statement em,
+.about em {
+  color: var(--ornet-gold-light) !important;
+}
+
+/* Sticky navigation */
+.nav {
+  background: #111110ed !important;
+  border-bottom: 1px solid #c9a45c55 !important;
+  backdrop-filter: blur(14px);
+}
+
+.nav nav a {
+  color: var(--ornet-text) !important;
+  transition: color .25s ease;
+}
+
+.nav nav a:hover {
+  color: var(--ornet-gold-light) !important;
+}
+
+.nav .nav-cta {
+  border-color: var(--ornet-gold) !important;
+  color: var(--ornet-gold-light) !important;
+}
+
+.menu {
+  color: var(--ornet-gold-light);
+}
+
+/* Homepage: premium interior photo */
+.hero {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      90deg,
+      #111110 0%,
+      #111110 35%,
+      #111110e8 49%,
+      #11111075 70%,
+      #11111030 100%
+    ),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85")
+    center / cover no-repeat !important;
+  border-bottom: 1px solid #c9a45c35;
+}
+
+.hero .lead,
+.section-head > p {
+  color: var(--ornet-muted) !important;
+}
+
+.hero .hero-label {
+  color: #f6f1e7;
+  text-shadow: 0 2px 10px #000;
+}
+
+.hero-label b {
+  color: var(--ornet-gold-light) !important;
+}
+
+/* Gold luxury buttons */
+.btn.primary,
+.catalogue-btn {
+  background: linear-gradient(
+    135deg,
+    #e5cb8c,
+    #b68b3e
+  ) !important;
+  color: #17130c !important;
+  border: 1px solid var(--ornet-gold) !important;
+  font-weight: 700;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.btn.primary:hover,
+.catalogue-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px #c9a45c35;
+}
+
+.btn.ghost {
+  color: var(--ornet-text) !important;
+  border: 1px solid #c9a45c90 !important;
+}
+
+/* Statement section */
+.statement,
+.contact {
+  background: var(--ornet-dark) !important;
+  color: var(--ornet-text) !important;
+  border-top: 1px solid #c9a45c24;
+  border-bottom: 1px solid #c9a45c24;
+}
+
+/* Services and information sections */
+.section,
+.about {
+  background: transparent;
+  color: var(--ornet-text);
+}
+
+.service-grid {
+  border-color: #c9a45c45 !important;
+}
+
+.service-grid article {
+  border-color: #c9a45c30 !important;
+  transition: background .25s ease;
+}
+
+.service-grid article:hover {
+  background: #c9a45c09;
+}
+
+.service-grid h3 {
+  color: var(--ornet-gold-light);
+}
+
+.service-grid p,
+.about > div:last-child {
+  color: var(--ornet-muted) !important;
+}
+
+.facts {
+  color: var(--ornet-text) !important;
+}
+
+.facts small {
+  color: var(--ornet-gold) !important;
+}
+
+/* Projects and gallery */
+.projects {
+  background: #191816 !important;
+}
+
+.project,
+.gallery-card {
+  border: 1px solid #c9a45c30;
+}
+
+.project img,
+.gallery-card img {
+  transition: transform .5s ease;
+}
+
+.project:hover img,
+.gallery-card:hover img {
+  transform: scale(1.035);
+}
+
+/* Catalogue area */
+#design-catalogue {
+  background: #151412 !important;
+  color: var(--ornet-text);
+  border-top: 1px solid #c9a45c35;
+  border-bottom: 1px solid #c9a45c35;
+}
+
+#design-catalogue h2 {
+  color: var(--ornet-gold-light);
+}
+
+/* Contact and footer */
+.contact h2 {
+  color: var(--ornet-text);
+}
+
+.contact-box a:not(.btn) {
+  color: var(--ornet-gold-light);
+  border-color: #c9a45c45 !important;
+}
+
+footer {
+  background: #0b0b0a;
+  color: var(--ornet-muted) !important;
+  border-top: 1px solid #c9a45c45;
+}
+
+/* Mobile menu */
+#ornet-menu {
+  background: #191816 !important;
+  border: 1px solid var(--ornet-gold) !important;
+}
+
+#ornet-menu a {
+  color: var(--ornet-text) !important;
+  border-bottom-color: #c9a45c25 !important;
+}
+
+#ornet-menu a:hover {
+  background: #c9a45c18 !important;
+}
+
+/* Mobile photo readability */
+@media (max-width: 800px) {
+  .hero {
+    background:
+      linear-gradient(
+        180deg,
+        #111110c9 0%,
+        #111110e8 58%,
+        #111110 100%
+      ),
+      url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80")
+      center / cover no-repeat !important;
+  }
+  }
+  

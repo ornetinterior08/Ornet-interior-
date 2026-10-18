@@ -14,7 +14,18 @@
 <header class="nav">
   <a class="brand" href="#home" aria-label="ORNET Interior and Furniture home"><img src="ornet-logo.png" alt="ORNET Interior @ Furniture logo"></a>
   <button class="menu" aria-label="Open menu">☰</button>
-  <nav>
+  <nav id="ornet-menu">
+  <a href="#home">⌂ Home</a>
+  <a href="#services">✦ Our Services</a>
+  <a href="#projects">▦ Our Projects</a>
+  <a href="#about">ⓘ About Us</a>
+  <a href="#services">🍳 Modular Kitchen</a>
+  <a href="#services">🚪 Wardrobe Design</a>
+  <a href="#contact">🧮 Get an Estimate</a>
+  <a href="#contact" class="nav-cta">📋 Get a Quote</a>
+  <a href="https://wa.me/9340431814">☎ Contact on WhatsApp</a>
+</nav>
+    
     <a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a>
     <a href="#about">About</a><a href="#contact" class="nav-cta">Get a Quote</a>
   </nav>
@@ -88,6 +99,48 @@
   color: white;
   transform: translateY(-3px);
 }
+
+#ornet-menu {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #b8915b;
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 6px 20px #0002;
+}
+
+#ornet-menu.menu-open {
+  display: flex;
+}
+
+#ornet-menu a {
+  display: block;
+  padding: 12px 15px;
+  color: #222222;
+  text-decoration: none;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#ornet-menu a:hover {
+  background: #f5eee4;
+}
+
+@media (max-width: 768px) {
+  header.nav {
+    position: relative;
+  }
+
+  #ornet-menu.menu-open {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    right: 10px;
+    z-index: 9999;
+    max-height: 75vh;
+    overflow-y: auto;
+  }
+}
 </style>
 
 <section id="design-catalogue" style="text-align:center; padding:25px 10px;">
@@ -104,8 +157,6 @@
      href="./ornet_wardrobe_catalog_with_photos.pdf"
      download>
     ⬇ Download Catalogue
-  </a>
-</section>
   </a>
 </section>
 <section id="about" class="about section">
@@ -145,5 +196,31 @@
 
 <footer><a class="brand" href="#home"><img src="ornet-logo.png" alt="ORNET Interior @ Furniture logo"></a><p>© 2026 ORNET Interior @ Furniture. All rights reserved.</p></footer>
 <script src="script.js"></script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.querySelector("button.menu");
+  const nav = document.getElementById("ornet-menu");
+
+  if (!button || !nav) return;
+
+  button.setAttribute("aria-expanded", "false");
+
+  button.addEventListener("click", function () {
+    const open = nav.classList.toggle("menu-open");
+    button.setAttribute("aria-expanded", String(open));
+    button.textContent = open ? "✕" : "☰";
+  });
+
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("menu-open");
+      button.setAttribute("aria-expanded", "false");
+      button.textContent = "☰";
+    });
+  });
+});
+</script>
+
 </body>
 </html>
